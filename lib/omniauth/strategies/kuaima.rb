@@ -9,7 +9,7 @@ module OmniAuth
 
       # This is where you pass the options you would pass when
       # initializing your consumer from the OAuth gem.
-      option :client_options, {:site => "https://i.kuai.ma/oauth/v1", :authorize_url => 'https://i.kuai.ma/oauth/authorize', :token_url => 'https://i.kuai.ma/oauth/access_token'}
+      option :client_options, {:site => "https://i.kuai.ma", :authorize_url => 'https://i.kuai.ma/oauth/authorize', :token_url => 'https://i.kuai.ma/oauth/access_token'}
 
       uid { raw_info['id'] }
 
@@ -17,8 +17,7 @@ module OmniAuth
         {
           :nickname => raw_info['full_name'],
           :email => raw_info['email'],
-          :name => raw_info['code'],
-          :image => raw_info['avatar_url']
+          :name => raw_info['code']
         }
       end
 
@@ -28,7 +27,7 @@ module OmniAuth
 
       def raw_info
         access_token.options[:mode] = :query
-        @raw_info ||= access_token.get('user').parsed
+        @raw_info ||= access_token.get('/oauth/v1/user').parsed
       end
 
     end
