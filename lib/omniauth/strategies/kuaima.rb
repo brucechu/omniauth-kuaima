@@ -27,7 +27,7 @@ module OmniAuth
 
       def raw_info
         access_token.options[:mode] = :query
-        @raw_info ||= access_token.get('/oauth/v1/user').parsed
+        @raw_info ||= access_token.get('oauth/v1/user').parsed
       end
 
     end
