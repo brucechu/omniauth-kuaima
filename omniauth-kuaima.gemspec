@@ -1,26 +1,26 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/omniauth-kuaima/version', __FILE__)
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'omniauth-kuaima/version'
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["Bruce Zhu"]
-  gem.email         = ["brucezhu@kuai.ma"]
-  gem.description   = %q{Official OmniAuth strategy for Kuai.ma.}
-  gem.summary       = %q{Official OmniAuth strategy for Kuai.ma.}
-  gem.homepage      = "https://github.com/intridea/omniauth-kuaima"
-  gem.license       = "Kuaima,Inc."
+  gem.name          = 'omniauth-kuaima'
+  gem.version       = Omniauth::Kuaima::VERSION
+  gem.authors       = ['brucezhu']
+  gem.email         = ['brucezhu@kuai.ma']
+  gem.description   = %q{This is the strategy for authenticating to your Kuaima service}
+  gem.summary       = %q{This is the strategy for authenticating to your Kuaima service}
+  gem.homepage      = 'https://github.com/brucechu/omniauth-kuaima'
 
-  gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  gem.files         = `git ls-files`.split("\n")
-  gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  gem.name          = "omniauth-kuaima"
-  gem.require_paths = ["lib"]
-  gem.version       = OmniAuth::Kuaima::VERSION
+  gem.files         = `git ls-files`.split($/)
+  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  gem.require_paths = ['lib']
 
   gem.add_dependency 'omniauth', '~> 1.0'
-  # Nothing lower than omniauth-oauth2 1.1.1
-  # http://www.rubysec.com/advisories/CVE-2012-6134/
-  gem.add_dependency 'omniauth-oauth2', '>= 1.1.1', '< 2.0'
-  gem.add_development_dependency 'rspec', '~> 2.7'
+  gem.add_dependency 'omniauth-oauth2', '~> 1.0'
+  gem.add_development_dependency 'rspec', '~> 3.1'
+  gem.add_development_dependency 'rspec-its', '~> 1.0'
   gem.add_development_dependency 'rack-test'
   gem.add_development_dependency 'simplecov'
   gem.add_development_dependency 'webmock'

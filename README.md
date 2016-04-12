@@ -1,1 +1,1 @@
-# omniauth-kuaima
+omniauth-kuaima

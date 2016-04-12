@@ -1,12 +1,4 @@
-source 'http://rubygems.org'
+source 'https://ruby.taobao.org'
 
 # Specify your gem's dependencies in omniauth-kuaima.gemspec
 gemspec
-
-group :development, :test do
-  gem 'guard'
-  gem 'guard-rspec'
-  gem 'guard-bundler'
-  gem 'rb-fsevent'
-  gem 'growl'
-end
