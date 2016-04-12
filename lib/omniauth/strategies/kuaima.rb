@@ -11,7 +11,7 @@ module OmniAuth
           token_url: '/oauth/access_token'
       }
 
-      option :redirect_url
+      #option :redirect_url
 
       uid { raw_info['id'].to_s }
 
