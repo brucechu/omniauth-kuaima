@@ -46,17 +46,17 @@ describe OmniAuth::Strategies::KuaiMa do
     end
   end
 
-  #describe 'redirect_url' do
-  #  context 'with defaults' do
-  #    subject { kuaima_service.options }
-  #    its(:redirect_url) { is_expected.to be_nil }
-  #  end
+  describe 'redirect_url' do
+    context 'with defaults' do
+      subject { kuaima_service.options }
+      its(:redirect_url) { is_expected.to be_nil }
+    end
 
-  #  context 'with customs' do
-  #    subject { enterprise.options }
-  #    its(:redirect_url) { is_expected.to eq 'http://localhost:9292/callback_url' }
-  #  end
-  #end
+    context 'with customs' do
+      subject { enterprise.options }
+      its(:redirect_url) { is_expected.to eq 'http://localhost:9292/callback_url' }
+    end
+  end
 
   describe '#raw_info' do
     it 'sent request to current user endpoint' do
