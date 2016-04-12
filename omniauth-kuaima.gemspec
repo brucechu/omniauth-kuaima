@@ -5,7 +5,7 @@ require 'omniauth-kuaima/version'
 
 Gem::Specification.new do |gem|
   gem.name          = 'omniauth-kuaima'
-  gem.version       = Omniauth::Kuaima::VERSION
+  gem.version       = OmniAuth::Kuaima::VERSION
   gem.authors       = ['brucezhu']
   gem.email         = ['brucezhu@kuai.ma']
   gem.description   = %q{This is the strategy for authenticating to your Kuaima service}
